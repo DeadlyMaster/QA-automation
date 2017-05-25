@@ -2,6 +2,7 @@ package org.fasttrackit.exemples;
 
 import com.sdl.selenium.web.utils.Utils;
 import com.sun.deploy.security.DeployURLClassPathCallback;
+import org.fasttrackit.automation.LoginView;
 import org.fasttrackit.util.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
@@ -18,20 +19,27 @@ import static org.hamcrest.core.Is.is;
  */
 public class LoginTest extends TestBase {
 
+//    protected LoginView loginView = new LoginView();
+
     @Test
     public void validLoginTest(){
-        driver.get("https://rawgit.com/sdl/Testy/master/src/test/functional/app-demo/login.html");
+//        driver.get("https://rawgit.com/sdl/Testy/master/src/test/functional/app-demo/login.html");
+//
+//        driver.findElement(By.name("username")).sendKeys(USER_NAME);
+//        driver.findElement(By.id("password")).sendKeys(PASSWORD);
+//
+//        WebElement passwordElement = driver.findElement(By.id("password"));
+//        passwordElement.sendKeys("eu.pass111111");
+//        passwordElement.clear();
+//        passwordElement.sendKeys("eu.pass");
+//
+//        WebElement loginBtn = driver.findElement(By.id("loginButton"));
+//        loginBtn.click();
 
-        driver.findElement(By.name("username")).sendKeys("eu@fast.com");
-        driver.findElement(By.id("password")).sendKeys("eu.pass");
+        LoginTest login = new LoginTest();
+        login.doLogin(USER_NAME,PASSWORD);
 
-        WebElement passwordElement = driver.findElement(By.id("password"));
-        passwordElement.sendKeys("eu.pass111111");
-        passwordElement.clear();
-        passwordElement.sendKeys("eu.pass");
 
-        WebElement loginBtn = driver.findElement(By.id("loginButton"));
-        loginBtn.click();
 
 
         try {
@@ -46,14 +54,6 @@ public class LoginTest extends TestBase {
     @Test
     public void invalidLoginTest(){
         driver.get("https://rawgit.com/sdl/Testy/master/src/test/functional/app-demo/login.html");
-//        try {
-//            driver.findElement(By.name("username")).sendKeys("wrong@username");
-//            driver.findElement(By.id("password")).sendKeys("wrong.password");
-//            WebElement loginBtn = driver.findElement(By.id("loginButton"));
-//            loginBtn.click();
-//        } catch (NoSuchElementException e){
-//            Assert.fail("Invalid username or password");
-//        }
 
         driver.findElement(By.name("username")).sendKeys("wrong@username");
         driver.findElement(By.id("password")).sendKeys("wrong.password");
