@@ -1,11 +1,7 @@
-package org.fasttrackit.exemples;
+package org.fasttrackit.automation;
 
-import com.sdl.selenium.web.utils.Utils;
-import com.sun.deploy.security.DeployURLClassPathCallback;
-import org.fasttrackit.automation.LoginView;
 import org.fasttrackit.util.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

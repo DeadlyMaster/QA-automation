@@ -7,32 +7,41 @@ import com.sdl.selenium.web.utils.Utils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by Andrei Pintea on 18.05.2017.
- */
-public class PrefferencesView {
+
+public class PreferencesView  extends WebLocator{
 
 
-    private Button preff = new Button().setElCssSelector("button.btn.btn-default.navbar-btn");
-    private Button closeX = new Button().setElCssSelector("#preferences-win button.close");
+    private Button preff = new Button().setText("Preferences");
+
+//    private WebLocator win = new WebLocator().setId("preferences-win");
+
+    private WebLocator closeX = new WebLocator(this).setClasses("close");
 
 //    @FindBy(xpath = "//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[1]/div/input")
-    private TextField password = new TextField().setElPath("//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[1]/div/input");
+    private TextField password = new TextField(this).setName("password");
 //    @FindBy(xpath = "//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[2]/div/input")
-    private TextField newPassword = new TextField().setElPath("//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[2]/div/input");;
+    private TextField newPassword = new TextField(this).setName("newPassword");
 //    @FindBy(xpath = "//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[3]/div/input")
-    private TextField repeatNewPassword = new TextField().setElPath("//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[3]/div/input");;
+    private TextField repeatNewPassword = new TextField(this).setName("newPasswordRepeat");
 //    @FindBy(xpath = "//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[5]/div/button")
-    private Button save = new Button().setElPath("//*[@id=\"preferences-win\"]/form/div/div/div[2]/div[5]/div/button");
+    private Button save = new Button(this).setText("Save");
 
 //    @FindBy(xpath = "//*[@id=\\\"preferences-win\\\"]/form/div/div/div[2]/div[4]")
-    private WebLocator errorMsg = new WebLocator().setElPath("//*[@id=\\\"preferences-win\\\"]/form/div/div/div[2]/div[4]");
+    private WebLocator errorMsg = new WebLocator(this).setClasses("status-msg");
 
-
-    public String getMessage(){
-        return "Password does not match the confirm password!";
+    public String getErrorMsg(){
+        return errorMsg.getText();
     }
 
+
+//    public String getMessage(){
+//        return "Password does not match the confirm password!";
+//    }
+
+
+    public PreferencesView(){
+        setId("preferences-win");
+    }
 
 
     public void setValues(String pass, String newPass, String repeatNewPass) {

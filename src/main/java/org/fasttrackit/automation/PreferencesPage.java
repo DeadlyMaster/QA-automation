@@ -5,10 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by Andrei Pintea on 18.05.2017.
- */
-public class PrefferencesPage {
+
+public class PreferencesPage {
 
     @FindBy(css = "button.btn.btn-default.navbar-btn")
     private WebElement preff;
