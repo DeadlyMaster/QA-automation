@@ -3,7 +3,9 @@ package org.fasttrackit.util;
 import com.sdl.selenium.web.utils.PropertiesReader;
 import com.sdl.selenium.web.utils.Utils;
 import org.fasttrackit.automation.LoginView;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +35,11 @@ public abstract class TestBase {
         loginPage.login(user, pass);
 
 
+    }
+
+    public void doLogout(){
+        WebElement logoutBtn = driver.findElement(By.linkText("Logout"));
+        logoutBtn.click();
     }
 
     private static void startSuite() {

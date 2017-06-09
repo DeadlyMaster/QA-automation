@@ -8,9 +8,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-/**
- * Created by Andrei Pintea on 11.05.2017.
- */
+
 public class PrefferencesTests extends TestBase{
 
     protected PreferencesView page = new PreferencesView();

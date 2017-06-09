@@ -53,7 +53,7 @@ public class ExemplesTest extends TestBase {
         CheckBox select4 = new CheckBox(row4);
         select4.click();
 
-        Row row5 = table.getRow(new Cell("Johnxxx"),new Cell("Moore"));
+        Row row5 = table.getRow(new Cell("John"),new Cell("Moore"));
         CheckBox select5 = new CheckBox(row5);
         select5.click();
 
