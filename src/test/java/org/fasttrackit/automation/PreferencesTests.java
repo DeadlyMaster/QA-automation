@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 
-public class PrefferencesTests extends TestBase{
+public class PreferencesTests extends TestBase{
 
     protected PreferencesView page = new PreferencesView();
 
@@ -22,13 +22,14 @@ public class PrefferencesTests extends TestBase{
         page.close();
     }
 
-
-
+    @Test
     public void inputChangePassword(String pass, String newPass, String repeatNewPass){
-        doLogin(USER_NAME,PASSWORD);
+        doLogin(USER_NAME, PASSWORD);
         page.open();
         page.setValues(pass,newPass,repeatNewPass);
+
     }
+
 
     @Test
     public void changePasswordWrong(){

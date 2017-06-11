@@ -83,7 +83,6 @@ public class LoginTest extends TestBase {
     @DataProvider
     public Object[][] invalidUsers(){
 
-
         return new Object[][]{
                 {"wrong@user","wrong.pass","Invalid user or password!"},
                 {"empty.pass@user","","Please enter your password!"},

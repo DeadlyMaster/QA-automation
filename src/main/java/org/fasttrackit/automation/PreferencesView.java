@@ -4,8 +4,7 @@ import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.button.Button;
 import com.sdl.selenium.web.form.TextField;
 import com.sdl.selenium.web.utils.Utils;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 
 public class PreferencesView  extends WebLocator{
